@@ -18,6 +18,13 @@ spec:
         - image: gusgrins/udagram-api-user:0.0.4
           name: backend-user
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "2048Mi"
+              cpu: "500m" 
           env:
             - name: URL
               valueFrom:

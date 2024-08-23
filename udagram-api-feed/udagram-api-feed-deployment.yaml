@@ -17,7 +17,14 @@ spec:
       containers:
       - image: gusgrins/udagram-api-feed:0.0.2
         name: backend-feed
-        imagePullPolicy: Always                
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"                 
         env:
         - name: URL
           valueFrom:
